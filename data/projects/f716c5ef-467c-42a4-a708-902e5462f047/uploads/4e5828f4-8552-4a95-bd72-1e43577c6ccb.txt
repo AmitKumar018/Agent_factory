@@ -1,0 +1,91 @@
+complete folder structure
+
+agent factory/
+├── app/
+│   ├── main.py                  # FastAPI app entry point
+│   ├── config.py                # All env-var config (12-factor)
+│   ├── dependencies.py          # Shared FastAPI dependencies (JWT, DB session)
+│   │
+│   ├── auth/
+│   │   ├── router.py            # POST /auth/login, /auth/register
+│   │   ├── schemas.py           # Pydantic models for auth
+│   │   └── service.py           # JWT issue/validate logic
+│   │
+│   ├── projects/
+│   │   ├── router.py            # POST/GET/PATCH /projects
+│   │   ├── schemas.py
+│   │   ├── models.py            # SQLAlchemy ORM model
+│   │   └── service.py
+│   │
+│   ├── documents/
+│   │   ├── router.py            # POST/GET /projects/{id}/documents
+│   │   ├── schemas.py
+│   │   ├── models.py
+│   │   ├── service.py
+│   │   └── parser.py            # PDF/DOCX/PPTX/XLSX/MD/TXT parsers
+│   │
+│   ├── patterns/
+│   │   ├── router.py            # CRUD + /patterns/search
+│   │   ├── schemas.py
+│   │   ├── models.py
+│   │   ├── service.py
+│   │   └── seed.py              # 10 canonical patterns
+│   │
+│   ├── workflows/
+│   │   ├── router.py            # Trigger endpoints for all 3 workflows
+│   │   ├── schemas.py
+│   │   ├── models.py            # Run, Task, Approval ORM models
+│   │   ├── service.py           # Run lifecycle management
+│   │   │
+│   │   ├── requirements/        # Workflow 1
+│   │   │   ├── graph.py         # LangGraph StateGraph
+│   │   │   ├── nodes.py         # Reader, GapAnalyzer, Clarifier, Writer nodes
+│   │   │   ├── state.py         # State schema + reducers
+│   │   │   └── prompts.py
+│   │   │
+│   │   ├── planning/            # Workflow 2
+│   │   │   ├── graph.py
+│   │   │   ├── nodes.py         # PatternSelector, Researcher, Architect, Planner, Critic
+│   │   │   ├── subgraphs.py     # Researcher subgraph
+│   │   │   ├── state.py
+│   │   │   └── prompts.py
+│   │   │
+│   │   └── codegen/             # Workflow 3
+│   │       ├── graph.py
+│   │       ├── nodes.py         # Orchestrator, Developer, Reviewers
+│   │       ├── subgraphs.py     # Per-task dynamic subgraph
+│   │       ├── state.py
+│   │       └── prompts.py
+│   │
+│   ├── hitl/
+│   │   ├── websocket.py         # WS endpoint + message handling
+│   │   └── manager.py           # Per-run WS session manager
+│   │
+│   ├── sse/
+│   │   ├── router.py            # GET /projects/{id}/runs/{id}/events
+│   │   └── manager.py           # SSE fan-out + event persistence
+│   │
+│   ├── storage/
+│   │   ├── file_store.py        # FileStore abstraction
+│   │   ├── vector_store.py      # ChromaDB wrapper (documents + patterns)
+│   │   └── database.py          # SQLAlchemy async engine + session
+│   │
+│   ├── hooks/
+│   │   └── node_hooks.py        # Pre/post node hook layer (observability seam)
+│   │
+│   └── observability/
+│       ├── token_tracer.py      # TokenTracer middleware
+│       ├── router.py            # GET /runs/{id}/usage, /traceability
+│       └── models.py            # UsageRecord, AuditLog ORM models
+│
+├── data/                        # Runtime data (gitignored)
+│   └── projects/
+├── tests/
+│   ├── unit/
+│   └── integration/
+├── scripts/
+│   └── run_pipeline.py          # (Brownie point) Full pipeline CLI
+├── .env.example
+├── requirements.txt
+├── alembic/                     # DB migrations
+└── README.md

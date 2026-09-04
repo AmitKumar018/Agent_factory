@@ -1,0 +1,66 @@
+{
+  "run_id": "75ad2f92-f710-4b4b-aed7-69f3e4e05766",
+  "project_id": "235e6f17-0829-4a85-9906-051dbadd6092",
+  "generated_at": "2026-08-01T05:05:31.216362+00:00",
+  "tasks": {
+    "bb9e9e20-1c3b-43ce-9152-294be6cb872d": {
+      "title": "Persist planning artifacts and run state",
+      "status": "failed",
+      "files": []
+    },
+    "17883eda-f967-4852-bc47-2d0391d72d1f": {
+      "title": "Ground planning with project documents and Pattern KB",
+      "status": "failed",
+      "files": []
+    },
+    "b6d3ca2b-5d5d-459f-a6a4-6f0c057688b8": {
+      "title": "Generate implementation architecture",
+      "status": "failed",
+      "files": []
+    },
+    "526d0ab9-1ea5-40d7-8ef2-0eaf9f23f3ed": {
+      "title": "Produce ordered implementation tasks",
+      "status": "failed",
+      "files": []
+    },
+    "07599f32-83c4-43e8-9965-f5531676386b": {
+      "title": "Review and revise the plan",
+      "status": "failed",
+      "files": []
+    },
+    "2707c640-f1fa-41f7-a0a1-ede9490e44a5": {
+      "title": "Expose HITL approval and progress",
+      "status": "failed",
+      "files": []
+    }
+  },
+  "all_files": [
+    "MANIFEST.json"
+  ],
+  "completed_tasks": [],
+  "failed_tasks": [
+    "bb9e9e20-1c3b-43ce-9152-294be6cb872d",
+    "17883eda-f967-4852-bc47-2d0391d72d1f",
+    "b6d3ca2b-5d5d-459f-a6a4-6f0c057688b8",
+    "526d0ab9-1ea5-40d7-8ef2-0eaf9f23f3ed",
+    "07599f32-83c4-43e8-9965-f5531676386b",
+    "2707c640-f1fa-41f7-a0a1-ede9490e44a5"
+  ],
+  "final_approval": {
+    "status": "approved",
+    "approved": true,
+    "decision": "approve",
+    "feedback": "Approved from Swagger E2E test.",
+    "request_id": "8cf71de1-c8e1-4e77-baa1-0d58f0eb9b1b",
+    "decided_at": "2026-08-01T05:08:30.844880+00:00"
+  },
+  "hitl_request_id": "8cf71de1-c8e1-4e77-baa1-0d58f0eb9b1b",
+  "approval_state": {
+    "status": "approved",
+    "approved": true,
+    "decision": "approve",
+    "feedback": "Approved from Swagger E2E test.",
+    "request_id": "8cf71de1-c8e1-4e77-baa1-0d58f0eb9b1b",
+    "decided_at": "2026-08-01T05:08:30.844880+00:00"
+  }
+}

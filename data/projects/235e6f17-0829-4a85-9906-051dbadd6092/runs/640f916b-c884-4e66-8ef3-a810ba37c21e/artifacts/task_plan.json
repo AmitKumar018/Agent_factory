@@ -1,0 +1,265 @@
+{
+  "tasks": [
+    {
+      "task_id": "task_14a04cb9",
+      "title": "Persist planning artifacts and run state",
+      "description": "Wire architecture, selected patterns, research log, and task plan artifacts into FileStore and Run.output_data.",
+      "target_files": [
+        "app/workflows/planning/nodes.py",
+        "app/workflows/planning/service.py"
+      ],
+      "acceptance_criteria": [
+        "Run output contains artifact_paths for architecture, patterns, research, and task plan.",
+        "Task rows are inserted with title, description, order, and pattern references."
+      ],
+      "dependencies": [],
+      "pattern_refs": [
+        "Planner-Executor"
+      ],
+      "requirement_refs": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "NFR-001",
+        "NFR-002",
+        "NFR-003",
+        "NFR-004"
+      ],
+      "order": 1,
+      "complexity": "medium"
+    },
+    {
+      "task_id": "task_dd2e5818",
+      "title": "Ground planning with project documents and Pattern KB",
+      "description": "Query project-scoped document chunks plus the global Pattern KB, and record cited research findings.",
+      "target_files": [
+        "app/workflows/planning/chroma_adapter.py",
+        "app/workflows/planning/nodes.py"
+      ],
+      "acceptance_criteria": [
+        "Document findings never cross project boundaries.",
+        "Pattern KB findings are present or deterministic fallbacks are recorded."
+      ],
+      "dependencies": [
+        "task_14a04cb9"
+      ],
+      "pattern_refs": [
+        "RAG",
+        "Tool-Use"
+      ],
+      "requirement_refs": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "NFR-001",
+        "NFR-002",
+        "NFR-003",
+        "NFR-004"
+      ],
+      "order": 2,
+      "complexity": "high"
+    },
+    {
+      "task_id": "task_9df13ac0",
+      "title": "Generate implementation architecture",
+      "description": "Create architecture JSON and markdown that maps components, tools, data flow, topology, risks, and selected patterns.",
+      "target_files": [
+        "app/workflows/planning/nodes.py"
+      ],
+      "acceptance_criteria": [
+        "architecture.md and architecture.json are persisted.",
+        "Architecture references selected patterns and research."
+      ],
+      "dependencies": [
+        "task_dd2e5818"
+      ],
+      "pattern_refs": [
+        "Planner-Executor"
+      ],
+      "requirement_refs": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "NFR-001",
+        "NFR-002",
+        "NFR-003",
+        "NFR-004"
+      ],
+      "order": 3,
+      "complexity": "medium"
+    },
+    {
+      "task_id": "task_20ac320a",
+      "title": "Produce ordered implementation tasks",
+      "description": "Convert architecture and requirements into atomic, dependency-aware implementation tasks with acceptance criteria.",
+      "target_files": [
+        "app/workflows/planning/nodes.py",
+        "app/workflows/models.py"
+      ],
+      "acceptance_criteria": [
+        "Tasks have contiguous order values.",
+        "Each task has at least one acceptance criterion and requirement reference."
+      ],
+      "dependencies": [
+        "task_9df13ac0"
+      ],
+      "pattern_refs": [
+        "Planner-Executor"
+      ],
+      "requirement_refs": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "NFR-001",
+        "NFR-002",
+        "NFR-003",
+        "NFR-004"
+      ],
+      "order": 4,
+      "complexity": "medium"
+    },
+    {
+      "task_id": "task_5857472a",
+      "title": "Review and revise the plan",
+      "description": "Run a critic pass that validates requirements coverage, dependency ordering, pattern fidelity, and task atomicity.",
+      "target_files": [
+        "app/workflows/planning/nodes.py",
+        "app/workflows/planning/graph.py"
+      ],
+      "acceptance_criteria": [
+        "Critic output contains score, dimensions, feedback, and pass/fail.",
+        "Rejected plans route back to planner with feedback."
+      ],
+      "dependencies": [
+        "task_20ac320a"
+      ],
+      "pattern_refs": [
+        "Reflection",
+        "Critic-Refine (Reflexion)"
+      ],
+      "requirement_refs": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "NFR-001",
+        "NFR-002",
+        "NFR-003",
+        "NFR-004"
+      ],
+      "order": 5,
+      "complexity": "high"
+    },
+    {
+      "task_id": "task_09082010",
+      "title": "Expose HITL approval and progress",
+      "description": "Pause the graph for approval, resume using Command(resume=...), emit SSE events, and push WebSocket HITL messages.",
+      "target_files": [
+        "app/workflows/planning/graph.py",
+        "app/routers/planning.py"
+      ],
+      "acceptance_criteria": [
+        "A paused run has pending_hitl_request_id and pending_hitl_type=approval.",
+        "Approving the run completes planning and persists tasks."
+      ],
+      "dependencies": [
+        "task_5857472a"
+      ],
+      "pattern_refs": [
+        "Tool-Use",
+        "Router"
+      ],
+      "requirement_refs": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "NFR-001",
+        "NFR-002",
+        "NFR-003",
+        "NFR-004"
+      ],
+      "order": 6,
+      "complexity": "high"
+    }
+  ],
+  "total_tasks": 6,
+  "estimated_complexity": "complex",
+  "coverage_notes": "Tasks cover all approved requirements through shared requirement_refs and target architecture components."
+}

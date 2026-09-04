@@ -1,0 +1,2 @@
+aws s3 sync . s3://dna-learningndev-prod-bucket/repos/scaffolding_python__11__1b36c1d8-d369-40c3-ab0b-0b6bb97fb680/master/ --delete --exclude ./venv/\* --exclude ./env/\*
+echo Success

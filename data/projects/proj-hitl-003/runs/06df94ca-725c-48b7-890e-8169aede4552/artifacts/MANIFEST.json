@@ -1,0 +1,38 @@
+{
+  "run_id": "06df94ca-725c-48b7-890e-8169aede4552",
+  "project_id": "proj-hitl-003",
+  "generated_at": "2026-08-01T03:05:26.817751+00:00",
+  "tasks": {
+    "1cb0ed8c-2f02-4e38-9c69-6f6790647846": {
+      "title": "Task",
+      "status": "completed",
+      "files": [
+        "src/a.py"
+      ]
+    }
+  },
+  "all_files": [
+    "MANIFEST.json"
+  ],
+  "completed_tasks": [
+    "1cb0ed8c-2f02-4e38-9c69-6f6790647846"
+  ],
+  "failed_tasks": [],
+  "final_approval": {
+    "status": "rejected",
+    "approved": false,
+    "decision": "reject",
+    "feedback": "Code quality below threshold.",
+    "request_id": "dbc5144d-aa4c-415d-ac59-dddd9787f4d2",
+    "decided_at": "2026-08-01T03:05:27.118015+00:00"
+  },
+  "hitl_request_id": "dbc5144d-aa4c-415d-ac59-dddd9787f4d2",
+  "approval_state": {
+    "status": "rejected",
+    "approved": false,
+    "decision": "reject",
+    "feedback": "Code quality below threshold.",
+    "request_id": "dbc5144d-aa4c-415d-ac59-dddd9787f4d2",
+    "decided_at": "2026-08-01T03:05:27.118015+00:00"
+  }
+}

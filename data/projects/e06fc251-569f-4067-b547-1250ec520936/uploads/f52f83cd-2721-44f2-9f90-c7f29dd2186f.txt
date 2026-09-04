@@ -1,0 +1,16 @@
+
+Business Requirements Document
+
+Section 1: Overview
+This system shall process uploaded documents and extract requirements.
+All processing must complete within 30 seconds per document.
+
+Section 2: Functional Requirements
+The system shall support PDF, DOCX, PPTX, XLSX, MD, and TXT file formats.
+Each uploaded document shall be chunked and embedded into a vector store.
+Users shall be able to search documents using semantic similarity queries.
+
+Section 3: Non-Functional Requirements
+The system must maintain 99.9% uptime.
+All data must be encrypted at rest and in transit.
+Response times for API endpoints must be under 500ms for 95th percentile.
