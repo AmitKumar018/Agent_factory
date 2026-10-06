@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from app.projects.models import ProjectStatus
 
 
-# --- Request bodies ---
+# Request bodies 
 
 class ProjectCreate(BaseModel):
     """Body for POST /projects"""
@@ -20,7 +20,7 @@ class ProjectUpdate(BaseModel):
     status: Optional[ProjectStatus] = None
 
 
-# --- Response bodies ---
+# Response bodies 
 
 class ProjectResponse(BaseModel):
     """Returned for every project read/create/update operation"""

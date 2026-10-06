@@ -5,7 +5,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 
-# ── Inbound ───────────────────────────────────────────────────────────────────
+
 
 class PatternCreate(BaseModel):
     name:            str         = Field(..., min_length=1, max_length=120)
@@ -36,7 +36,7 @@ class PatternSearchRequest(BaseModel):
     top_k:  int            = Field(default=8, ge=1, le=50)
 
 
-# ── Outbound ──────────────────────────────────────────────────────────────────
+
 
 class PatternResponse(BaseModel):
     id:              str

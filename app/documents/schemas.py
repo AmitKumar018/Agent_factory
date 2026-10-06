@@ -4,8 +4,6 @@ from typing import Optional
 from pydantic import BaseModel
 from app.documents.models import ParseStatus, DocumentKind
 
-
-
 class DocumentUploadResponse(BaseModel):
     """
     Returned immediately after a file is uploaded (before parsing is done).

@@ -1,5 +1,3 @@
-
-
 from fastapi import (
     APIRouter, Depends, HTTPException, UploadFile, File,
     BackgroundTasks, Query, status
