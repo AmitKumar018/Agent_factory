@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import math
 import os
+import sqlite3
+import threading
 import uuid
 from typing import Any, Dict, List, Optional, TYPE_CHECKING
 
@@ -13,42 +16,13 @@ if TYPE_CHECKING:
 
 logger = get_logger(__name__)
 
-CHROMA_PERSIST_DIR = os.getenv("CHROMA_PERSIST_DIR", "./data/chromadb")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "all-MiniLM-L6-v2")
 DOCUMENTS_COLLECTION = "documents"
 PATTERNS_COLLECTION = "patterns"
 
-_chroma_client: Any | None = None
 _embed_model: Optional["SentenceTransformer"] = None
-_memory_collections: dict[str, "MemoryCollection"] = {}
-
-
-def _missing_dependency(name: str, install_hint: str) -> RuntimeError:
-    return RuntimeError(
-        f"{name} is required for vector-store operations. "
-        f"Install it with: {install_hint}"
-    )
-
-
-def get_chroma_client() -> Any:
-    """Return the shared Chroma PersistentClient, loading chromadb lazily."""
-    global _chroma_client
-    if _chroma_client is not None:
-        return _chroma_client
-
-    try:
-        import chromadb
-        from chromadb.config import Settings
-    except ModuleNotFoundError as exc:
-        raise _missing_dependency("chromadb", "pip install chromadb") from exc
-
-    os.makedirs(CHROMA_PERSIST_DIR, exist_ok=True)
-    _chroma_client = chromadb.PersistentClient(
-        path=CHROMA_PERSIST_DIR,
-        settings=Settings(anonymized_telemetry=False),
-    )
-    logger.info("chroma_client_initialized", path=CHROMA_PERSIST_DIR)
-    return _chroma_client
+_sqlite_connection: sqlite3.Connection | None = None
+_sqlite_lock = threading.RLock()
 
 
 def _get_embed_model() -> "SentenceTransformer" | None:
@@ -121,23 +95,64 @@ def _matches_where(metadata: dict[str, Any], where: Optional[Dict[str, Any]]) ->
     return True
 
 
-class MemoryCollection:
-    """Small Chroma-shaped collection used when ChromaDB is unavailable."""
+def _get_sqlite_connection() -> sqlite3.Connection:
+    """Return the process-local SQLite database used for vector storage."""
+    global _sqlite_connection
+    if _sqlite_connection is None:
+        _sqlite_connection = sqlite3.connect(":memory:", check_same_thread=False)
+        _sqlite_connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS vector_rows (
+                collection TEXT NOT NULL,
+                row_id TEXT NOT NULL,
+                document TEXT NOT NULL,
+                embedding TEXT,
+                metadata TEXT NOT NULL,
+                PRIMARY KEY (collection, row_id)
+            )
+            """
+        )
+        _sqlite_connection.execute(
+            "CREATE INDEX IF NOT EXISTS ix_vector_rows_collection "
+            "ON vector_rows(collection)"
+        )
+        _sqlite_connection.commit()
+        logger.info("sqlite_memory_vector_store_initialized")
+    return _sqlite_connection
+
+
+class SQLiteMemoryCollection:
+    """Chroma-compatible collection API backed by an in-memory SQLite table."""
 
     def __init__(self, name: str):
         self.name = name
-        self._rows: dict[str, dict[str, Any]] = {}
 
     def upsert(self, ids: list[str], documents: list[str], embeddings=None, metadatas=None) -> None:
         embeddings = embeddings or [None] * len(ids)
         metadatas = metadatas or [{} for _ in ids]
-        for index, row_id in enumerate(ids):
-            self._rows[row_id] = {
-                "id": row_id,
-                "document": documents[index],
-                "embedding": embeddings[index] if index < len(embeddings) else None,
-                "metadata": metadatas[index] if index < len(metadatas) else {},
-            }
+        with _sqlite_lock:
+            connection = _get_sqlite_connection()
+            connection.executemany(
+                """
+                INSERT INTO vector_rows(collection, row_id, document, embedding, metadata)
+                VALUES (?, ?, ?, ?, ?)
+                ON CONFLICT(collection, row_id) DO UPDATE SET
+                    document = excluded.document,
+                    embedding = excluded.embedding,
+                    metadata = excluded.metadata
+                """,
+                [
+                    (
+                        self.name,
+                        row_id,
+                        documents[index],
+                        json.dumps(embeddings[index]) if index < len(embeddings) and embeddings[index] is not None else None,
+                        json.dumps(metadatas[index] if index < len(metadatas) else {}),
+                    )
+                    for index, row_id in enumerate(ids)
+                ],
+            )
+            connection.commit()
 
     def query(
         self,
@@ -148,20 +163,31 @@ class MemoryCollection:
         include: Optional[list[str]] = None,
     ) -> dict[str, list[list[Any]]]:
         query_text = (query_texts or [""])[0] if query_texts is not None else ""
-        query_tokens = set(str(query_text).lower().split())
         query_embedding = (query_embeddings or [None])[0] if query_embeddings is not None else None
+        if query_embedding is None and query_text:
+            query_embedding = _embed_texts([str(query_text)])[0]
 
         scored: list[tuple[float, dict[str, Any]]] = []
-        for row in self._rows.values():
-            if not _matches_where(row["metadata"], where):
+        with _sqlite_lock:
+            rows = _get_sqlite_connection().execute(
+                "SELECT row_id, document, embedding, metadata FROM vector_rows WHERE collection = ?",
+                (self.name,),
+            ).fetchall()
+
+        for row_id, document, embedding_json, metadata_json in rows:
+            metadata = json.loads(metadata_json) if metadata_json else {}
+            if not _matches_where(metadata, where):
                 continue
+            embedding = json.loads(embedding_json) if embedding_json else None
             score = 0.0
-            if query_tokens:
-                doc_tokens = set(row["document"].lower().split())
-                score = len(query_tokens & doc_tokens) / max(len(query_tokens), 1)
-            elif query_embedding is not None and row.get("embedding") is not None:
-                score = sum(float(a) * float(b) for a, b in zip(query_embedding, row["embedding"]))
-            scored.append((score, row))
+            if query_embedding is not None and embedding is not None:
+                score = sum(float(a) * float(b) for a, b in zip(query_embedding, embedding))
+            scored.append((score, {
+                "id": row_id,
+                "document": document,
+                "embedding": embedding,
+                "metadata": metadata,
+            }))
 
         scored.sort(key=lambda item: item[0], reverse=True)
         rows = [row for _score, row in scored[:n_results]]
@@ -174,34 +200,43 @@ class MemoryCollection:
         }
 
     def delete(self, ids: Optional[list[str]] = None, where: Optional[Dict[str, Any]] = None) -> None:
-        if ids is not None:
-            for row_id in ids:
-                self._rows.pop(row_id, None)
-            return
-        for row_id, row in list(self._rows.items()):
-            if _matches_where(row["metadata"], where):
-                self._rows.pop(row_id, None)
+        with _sqlite_lock:
+            connection = _get_sqlite_connection()
+            if ids is not None:
+                connection.executemany(
+                    "DELETE FROM vector_rows WHERE collection = ? AND row_id = ?",
+                    [(self.name, row_id) for row_id in ids],
+                )
+            else:
+                rows = connection.execute(
+                    "SELECT row_id, metadata FROM vector_rows WHERE collection = ?",
+                    (self.name,),
+                ).fetchall()
+                connection.executemany(
+                    "DELETE FROM vector_rows WHERE collection = ? AND row_id = ?",
+                    [
+                        (self.name, row_id)
+                        for row_id, metadata_json in rows
+                        if _matches_where(json.loads(metadata_json), where)
+                    ],
+                )
+            connection.commit()
 
     def count(self) -> int:
-        return len(self._rows)
+        with _sqlite_lock:
+            return _get_sqlite_connection().execute(
+                "SELECT COUNT(*) FROM vector_rows WHERE collection = ?", (self.name,)
+            ).fetchone()[0]
 
 
-def _get_memory_collection(name: str) -> MemoryCollection:
-    if name not in _memory_collections:
-        _memory_collections[name] = MemoryCollection(name)
-        logger.warning("memory_vector_collection_initialized", collection=name)
-    return _memory_collections[name]
+_sqlite_collections: dict[str, SQLiteMemoryCollection] = {}
 
 
-def _get_collection(name: str):
-    try:
-        return get_chroma_client().get_or_create_collection(
-            name=name,
-            metadata={"hnsw:space": "cosine"},
-        )
-    except RuntimeError as exc:
-        logger.warning("chroma_unavailable_using_memory", collection=name, error=str(exc))
-        return _get_memory_collection(name)
+def _get_collection(name: str) -> SQLiteMemoryCollection:
+    if name not in _sqlite_collections:
+        _sqlite_collections[name] = SQLiteMemoryCollection(name)
+        logger.info("sqlite_memory_collection_initialized", collection=name)
+    return _sqlite_collections[name]
 
 
 def get_documents_collection():
@@ -213,14 +248,14 @@ def get_patterns_collection():
 
 
 class DocumentStore:
-    """Document vector store with Chroma primary and memory fallback."""
+    """Document vector store backed by process-local in-memory SQLite."""
 
     def __init__(self):
         self._collection = get_documents_collection()
         logger.info(
             "document_store_initialized",
             collection=DOCUMENTS_COLLECTION,
-            persist_dir=CHROMA_PERSIST_DIR,
+            database=":memory:",
             embed_model=EMBED_MODEL,
         )
 
@@ -269,7 +304,7 @@ class DocumentStore:
 
         results = self._collection.query(
             query_embeddings=[_embed_texts([query_text])[0]],
-            query_texts=[query_text] if isinstance(self._collection, MemoryCollection) else None,
+            query_texts=[query_text],
             n_results=n_results,
             where=filters,
             include=["documents", "metadatas", "distances"],
@@ -304,7 +339,7 @@ class DocumentStore:
             self._collection.count()
             return True
         except Exception as exc:
-            logger.error("chroma_health_check_failed", error=str(exc))
+            logger.error("sqlite_memory_health_check_failed", error=str(exc))
             return False
 
 

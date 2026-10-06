@@ -15,7 +15,7 @@ What we test:
   - Unauthenticated access is rejected (401 / 403)
   - Document not found in wrong project returns 404
 
-These tests run against a real local SQLite + ChromaDB (not mocked)
+These tests run against a real local SQLite + in-memory SQLite vector store (not mocked)
 so they exercise the full pipeline end-to-end.
 The OpenAI embeddings call IS made during parse — set OPENAI_API_KEY in your .env.
 If you want to run without hitting OpenAI, see conftest.py for mock options.

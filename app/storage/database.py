@@ -16,7 +16,7 @@ if sqlite_dir:
 
 engine = create_async_engine(
     f"sqlite+aiosqlite:///{settings.SQLITE_DB_PATH}",
-    echo=(settings.APP_ENV == "development"),
+    echo=False,
     connect_args={"check_same_thread": False},
 )
 

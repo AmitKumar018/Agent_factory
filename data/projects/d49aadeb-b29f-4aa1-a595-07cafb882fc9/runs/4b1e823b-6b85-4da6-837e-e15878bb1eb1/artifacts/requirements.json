@@ -1,0 +1,683 @@
+{
+  "goals": [
+    "Industrial Internship Project Report"
+  ],
+  "personas": [
+    {
+      "name": "Future improvements include barcode scanning",
+      "role": "Future improvements include barcode scanning",
+      "needs": "cloud deployment, mobile application support, email notifications, user role management, predictive inventory analysis, and integration with accounting software."
+    }
+  ],
+  "functional_requirements": [
+    {
+      "id": "FR-001",
+      "category": "functional",
+      "title": "This internship provided practical exposure to business workflows",
+      "description": "This internship provided practical exposure to business workflows, documentation standards, inventory tracking, and reporting using Microsoft Office applications.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section1_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-002",
+      "category": "functional",
+      "title": "I also thank my faculty mentor and my",
+      "description": "I also thank my faculty mentor and my institution for continuous support.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section1_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-003",
+      "category": "functional",
+      "title": "I also thank my faculty mentor and my",
+      "description": "I also thank my faculty mentor and my institution for continuous support.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section1_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-004",
+      "category": "functional",
+      "title": "ational data and reports I also thank my",
+      "description": "ational data and reports. I also thank my faculty mentor and my institution for continuous support.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section1_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-005",
+      "category": "functional",
+      "title": "I also thank my faculty mentor and my",
+      "description": "I also thank my faculty mentor and my institution for continuous support.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section1_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-006",
+      "category": "functional",
+      "title": "I also thank my faculty mentor and my",
+      "description": "I also thank my faculty mentor and my institution for continuous support.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section1_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-007",
+      "category": "functional",
+      "title": "lped me understand how businesses use Microsoft Office",
+      "description": "lped me understand how businesses use Microsoft Office tools to manage operational data and reports. I also thank my faculty mentor and my institution for continuous support.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section1_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-008",
+      "category": "functional",
+      "title": "It supports inventory analysis identifies lowstock items generates",
+      "description": "It supports inventory analysis, identifies low-stock items, generates business reports, and exports data to Microsoft Excel and Microsoft Word for operational and managerial decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-009",
+      "category": "functional",
+      "title": "The system reduces manual effort improves accuracy and",
+      "description": "The system reduces manual effort, improves accuracy, and supports better decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-010",
+      "category": "functional",
+      "title": "The system reduces manual effort improves accuracy and",
+      "description": "The system reduces manual effort, improves accuracy, and supports better decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-011",
+      "category": "functional",
+      "title": "The system reduces manual effort improves accuracy and",
+      "description": "The system reduces manual effort, improves accuracy, and supports better decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-012",
+      "category": "functional",
+      "title": "The system reduces manual effort improves accuracy and",
+      "description": "The system reduces manual effort, improves accuracy, and supports better decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-013",
+      "category": "functional",
+      "title": "The system reduces manual effort improves accuracy and",
+      "description": "The system reduces manual effort, improves accuracy, and supports better decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-014",
+      "category": "functional",
+      "title": "Businesses must know what items they own where",
+      "description": "Businesses must know what items they own, where they are stored, and when additional stock should be purchased.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk0",
+      "priority": "high"
+    },
+    {
+      "id": "FR-015",
+      "category": "functional",
+      "title": "The proposed Inventory Management System digitizes these activities",
+      "description": "The proposed Inventory Management System digitizes these activities and provides centralized record management.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-016",
+      "category": "functional",
+      "title": "Inventory is one of the most valuable assets",
+      "description": "Inventory is one of the most valuable assets of any organization. Businesses must know what items they own, where they are stored, and when additional stock should be purchased.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk0",
+      "priority": "high"
+    },
+    {
+      "id": "FR-017",
+      "category": "functional",
+      "title": "must know what items they own where they",
+      "description": "must know what items they own, where they are stored, and when additional stock should be purchased.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk1",
+      "priority": "high"
+    },
+    {
+      "id": "FR-018",
+      "category": "functional",
+      "title": "The proposed Inventory Management System digitizes these activities",
+      "description": "The proposed Inventory Management System digitizes these activities and provides centralized record management.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-019",
+      "category": "functional",
+      "title": "Businesses must know what items they own where",
+      "description": "Businesses must know what items they own, where they are stored, and when additional stock should be purchased.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk1",
+      "priority": "high"
+    },
+    {
+      "id": "FR-020",
+      "category": "functional",
+      "title": "The proposed Inventory Management System digitizes these activities",
+      "description": "The proposed Inventory Management System digitizes these activities and provides centralized record management.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-021",
+      "category": "functional",
+      "title": "Inventory is one of the most valuable assets",
+      "description": "Inventory is one of the most valuable assets of any organization. Businesses must know what items they own, where they are stored, and when additional stock should be purchased.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk1",
+      "priority": "high"
+    },
+    {
+      "id": "FR-022",
+      "category": "functional",
+      "title": "must know what items they own where they",
+      "description": "must know what items they own, where they are stored, and when additional stock should be purchased.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk2",
+      "priority": "high"
+    },
+    {
+      "id": "FR-023",
+      "category": "functional",
+      "title": "The proposed Inventory Management System digitizes these activities",
+      "description": "The proposed Inventory Management System digitizes these activities and provides centralized record management.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-024",
+      "category": "functional",
+      "title": "Businesses must know what items they own where",
+      "description": "Businesses must know what items they own, where they are stored, and when additional stock should be purchased.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk2",
+      "priority": "high"
+    },
+    {
+      "id": "FR-025",
+      "category": "functional",
+      "title": "The proposed Inventory Management System digitizes these activities",
+      "description": "The proposed Inventory Management System digitizes these activities and provides centralized record management.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-026",
+      "category": "functional",
+      "title": "For this report it is assumed that SCL",
+      "description": "For this report, it is assumed that SCL Technologies provides software development, IT consulting, and internship training.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section5_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-027",
+      "category": "functional",
+      "title": "The organization encourages students to develop practical business",
+      "description": "The organization encourages students to develop practical business applications that integrate Microsoft Office tools with modern software technologies.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section5_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-028",
+      "category": "functional",
+      "title": "The project aims to automate inventory operations improve",
+      "description": "The project aims to automate inventory operations, improve stock visibility, simplify supplier management, generate accurate reports, reduce manual effort, support business analysis through Excel, and enhance documentation using Microsoft Word.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section7_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-029",
+      "category": "functional",
+      "title": "The objectives are to maintain product information monitor",
+      "description": "The objectives are to maintain product information, monitor stock levels, manage suppliers, record purchases and sales, generate inventory reports, export reports to Excel and Word, and provide management with accurate business information.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section7_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-030",
+      "category": "functional",
+      "title": "The objectives are to maintain product information monitor",
+      "description": "The objectives are to maintain product information, monitor stock levels, manage suppliers, record purchases and sales, generate inventory reports, export reports to Excel and Word, and provide management with accurate business information.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section7_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-031",
+      "category": "functional",
+      "title": "The objectives are to maintain product information monitor",
+      "description": "The objectives are to maintain product information, monitor stock levels, manage suppliers, record purchases and sales, generate inventory reports, export reports to Excel and Word, and provide management with accurate business information.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section7_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-032",
+      "category": "functional",
+      "title": "ports export reports to Excel and Word and",
+      "description": "ports, export reports to Excel and Word, and provide management with accurate business information.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section7_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-033",
+      "category": "functional",
+      "title": "The objectives are to maintain product information monitor",
+      "description": "The objectives are to maintain product information, monitor stock levels, manage suppliers, record purchases and sales, generate inventory reports, export reports to Excel and Word, and provide management with accurate business information.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section7_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-034",
+      "category": "functional",
+      "title": "The objectives are to maintain product information monitor",
+      "description": "The objectives are to maintain product information, monitor stock levels, manage suppliers, record purchases and sales, generate inventory reports, export reports to Excel and Word, and provide management with accurate business information.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section7_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-035",
+      "category": "functional",
+      "title": "Each module is designed independently but integrated with",
+      "description": "Each module is designed independently but integrated with the central database.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section9_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-036",
+      "category": "functional",
+      "title": "Dashboard provides summary information product management maintains stock",
+      "description": "Dashboard provides summary information, product management maintains stock, supplier management stores vendor details, purchase and sales modules automatically update inventory, while reporting modules support business decisions.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section9_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-037",
+      "category": "functional",
+      "title": "Word is used to generate inventory summaries supplier",
+      "description": "Word is used to generate inventory summaries, supplier reports, purchase reports, and monthly documentation in a professional format.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section13_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-038",
+      "category": "functional",
+      "title": "Microsoft Word generates formatted inventory reports supplier reports",
+      "description": "Microsoft Word generates formatted inventory reports, supplier reports, and monthly summaries.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section13_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-039",
+      "category": "functional",
+      "title": "Microsoft Word generates formatted inventory reports supplier reports",
+      "description": "Microsoft Word generates formatted inventory reports, supplier reports, and monthly summaries.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section13_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-040",
+      "category": "functional",
+      "title": "Microsoft Word generates formatted inventory reports supplier reports",
+      "description": "Microsoft Word generates formatted inventory reports, supplier reports, and monthly summaries.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section13_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-041",
+      "category": "functional",
+      "title": "Microsoft Word generates formatted inventory reports supplier reports",
+      "description": "Microsoft Word generates formatted inventory reports, supplier reports, and monthly summaries.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section13_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-042",
+      "category": "functional",
+      "title": "Microsoft Word generates formatted inventory reports supplier reports",
+      "description": "Microsoft Word generates formatted inventory reports, supplier reports, and monthly summaries.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section13_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-043",
+      "category": "functional",
+      "title": "The system reduces paperwork improves productivity increases reporting",
+      "description": "The system reduces paperwork, improves productivity, increases reporting accuracy, provides faster access to inventory information, and supports better business decisions.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section14_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-044",
+      "category": "functional",
+      "title": "The system improves inventory accuracy reduces paperwork speeds",
+      "description": "The system improves inventory accuracy, reduces paperwork, speeds report generation, minimizes duplicate records, provides centralized storage, and enhances business decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section14_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-045",
+      "category": "functional",
+      "title": "The system improves inventory accuracy reduces paperwork speeds",
+      "description": "The system improves inventory accuracy, reduces paperwork, speeds report generation, minimizes duplicate records, provides centralized storage, and enhances business decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section14_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-046",
+      "category": "functional",
+      "title": "The system improves inventory accuracy reduces paperwork speeds",
+      "description": "The system improves inventory accuracy, reduces paperwork, speeds report generation, minimizes duplicate records, provides centralized storage, and enhances business decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section14_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-047",
+      "category": "functional",
+      "title": "The system improves inventory accuracy reduces paperwork speeds",
+      "description": "The system improves inventory accuracy, reduces paperwork, speeds report generation, minimizes duplicate records, provides centralized storage, and enhances business decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section14_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-048",
+      "category": "functional",
+      "title": "minimizes duplicate records provides centralized storage and enhances",
+      "description": ", minimizes duplicate records, provides centralized storage, and enhances business decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section14_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-049",
+      "category": "functional",
+      "title": "The system improves inventory accuracy reduces paperwork speeds",
+      "description": "The system improves inventory accuracy, reduces paperwork, speeds report generation, minimizes duplicate records, provides centralized storage, and enhances business decision-making.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section14_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-050",
+      "category": "functional",
+      "title": "The current implementation supports a single organization uses",
+      "description": "The current implementation supports a single organization, uses manual login authentication, and does not include barcode scanning or cloud synchronization.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section15_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-051",
+      "category": "functional",
+      "title": "The current implementation supports a single organization uses",
+      "description": "The current implementation supports a single organization, uses manual login authentication, and does not include barcode scanning or cloud synchronization.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section15_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-052",
+      "category": "functional",
+      "title": "The current implementation supports a single organization uses",
+      "description": "The current implementation supports a single organization, uses manual login authentication, and does not include barcode scanning or cloud synchronization.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section15_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-053",
+      "category": "functional",
+      "title": "The current implementation supports a single organization uses",
+      "description": "The current implementation supports a single organization, uses manual login authentication, and does not include barcode scanning or cloud synchronization.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section15_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-054",
+      "category": "functional",
+      "title": "The current implementation supports a single organization uses",
+      "description": "The current implementation supports a single organization, uses manual login authentication, and does not include barcode scanning or cloud synchronization.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section15_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-055",
+      "category": "functional",
+      "title": "Future enhancements include barcode scanning QR code support",
+      "description": "Future enhancements include barcode scanning, QR code support, mobile applications, cloud deployment, role-based access control, email notifications, and AI-based demand forecasting.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section16_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-056",
+      "category": "functional",
+      "title": "Future enhancements include barcode scanning QR code support",
+      "description": "Future enhancements include barcode scanning, QR code support, mobile applications, cloud deployment, role-based access control, email notifications, and AI-based demand forecasting.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section16_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-057",
+      "category": "functional",
+      "title": "Future enhancements include barcode scanning QR code support",
+      "description": "Future enhancements include barcode scanning, QR code support, mobile applications, cloud deployment, role-based access control, email notifications, and AI-based demand forecasting.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section16_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-058",
+      "category": "functional",
+      "title": "Future enhancements include barcode scanning QR code support",
+      "description": "Future enhancements include barcode scanning, QR code support, mobile applications, cloud deployment, role-based access control, email notifications, and AI-based demand forecasting.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section16_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-059",
+      "category": "functional",
+      "title": "Future enhancements include barcode scanning QR code support",
+      "description": "Future enhancements include barcode scanning, QR code support, mobile applications, cloud deployment, role-based access control, email notifications, and AI-based demand forecasting.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section16_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-060",
+      "category": "functional",
+      "title": "The Inventory Management System successfully demonstrates how Microsoft",
+      "description": "The Inventory Management System successfully demonstrates how Microsoft Office tools can be integrated into business processes.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-061",
+      "category": "functional",
+      "title": "By combining inventory tracking with Excelbased reporting and",
+      "description": "By combining inventory tracking with Excel-based reporting and Word documentation, the solution provides a practical, user-friendly system suitable for small and medium organizations.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-062",
+      "category": "functional",
+      "title": "The Inventory Management System successfully demonstrates how Microsoft",
+      "description": "The Inventory Management System successfully demonstrates how Microsoft Office tools can be integrated into business processes.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-063",
+      "category": "functional",
+      "title": "By combining inventory tracking with Excelbased reporting and",
+      "description": "By combining inventory tracking with Excel-based reporting and Word documentation, the solution provides a practical, user-friendly system suitable for small and medium organizations.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-064",
+      "category": "functional",
+      "title": "he solution provides a practical userfriendly system suitable",
+      "description": "he solution provides a practical, user-friendly system suitable for small and medium organizations.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-065",
+      "category": "functional",
+      "title": "The Inventory Management System successfully demonstrates how Microsoft",
+      "description": "The Inventory Management System successfully demonstrates how Microsoft Office tools can be integrated into business processes.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-066",
+      "category": "functional",
+      "title": "By combining inventory tracking with Excelbased reporting and",
+      "description": "By combining inventory tracking with Excel-based reporting and Word documentation, the solution provides a practical, user-friendly system suitable for small and medium organizations.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-067",
+      "category": "functional",
+      "title": "The Inventory Management System successfully demonstrates how Microsoft",
+      "description": "The Inventory Management System successfully demonstrates how Microsoft Office tools can be integrated into business processes.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-068",
+      "category": "functional",
+      "title": "By combining inventory tracking with Excelbased reporting and",
+      "description": "By combining inventory tracking with Excel-based reporting and Word documentation, the solution provides a practical, user-friendly system suitable for small and medium organizations.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-069",
+      "category": "functional",
+      "title": "The Inventory Management System successfully demonstrates how Microsoft",
+      "description": "The Inventory Management System successfully demonstrates how Microsoft Office tools can be integrated into business processes.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-070",
+      "category": "functional",
+      "title": "stem successfully demonstrates how Microsoft Office tools can",
+      "description": "stem successfully demonstrates how Microsoft Office tools can be integrated into business processes.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "FR-071",
+      "category": "functional",
+      "title": "By combining inventory tracking with Excelbased reporting and",
+      "description": "By combining inventory tracking with Excel-based reporting and Word documentation, the solution provides a practical, user-friendly system suitable for small and medium organizations.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk2",
+      "priority": "medium"
+    }
+  ],
+  "non_functional_requirements": [
+    {
+      "id": "NFR-001",
+      "category": "non_functional",
+      "title": "The proposed system maintains product information supplier records",
+      "description": "The proposed system maintains product information, supplier records, purchase transactions, sales records, and stock availability in a centralized database.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-002",
+      "category": "non_functional",
+      "title": "The project aims to design an Inventory Management",
+      "description": "The project aims to design an Inventory Management System that enables organizations to maintain product records, supplier information, purchase transactions, sales transactions, and stock availability.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-003",
+      "category": "non_functional",
+      "title": "The project aims to design an Inventory Management",
+      "description": "The project aims to design an Inventory Management System that enables organizations to maintain product records, supplier information, purchase transactions, sales transactions, and stock availability.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-004",
+      "category": "non_functional",
+      "title": "ct records supplier information purchase transactions sales transactions",
+      "description": "ct records, supplier information, purchase transactions, sales transactions, and stock availability.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-005",
+      "category": "non_functional",
+      "title": "The project aims to design an Inventory Management",
+      "description": "The project aims to design an Inventory Management System that enables organizations to maintain product records, supplier information, purchase transactions, sales transactions, and stock availability.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-006",
+      "category": "non_functional",
+      "title": "The project aims to design an Inventory Management",
+      "description": "The project aims to design an Inventory Management System that enables organizations to maintain product records, supplier information, purchase transactions, sales transactions, and stock availability.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk1",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-007",
+      "category": "non_functional",
+      "title": "ct records supplier information purchase transactions sales transactions",
+      "description": "ct records, supplier information, purchase transactions, sales transactions, and stock availability.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-008",
+      "category": "non_functional",
+      "title": "The project aims to design an Inventory Management",
+      "description": "The project aims to design an Inventory Management System that enables organizations to maintain product records, supplier information, purchase transactions, sales transactions, and stock availability.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section3_chunk2",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-009",
+      "category": "non_functional",
+      "title": "Every organization requires accurate information regarding stock availability",
+      "description": "Every organization requires accurate information regarding stock availability, procurement, and consumption.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-010",
+      "category": "non_functional",
+      "title": "The system developed during the internship simplifies inventory",
+      "description": "The system developed during the internship simplifies inventory tracking and minimizes manual errors while providing timely reports.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section4_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-011",
+      "category": "non_functional",
+      "title": "The proposed application requires Windows 10 or above",
+      "description": "The proposed application requires Windows 10 or above, Microsoft Office 2019/365, Visual Studio, ASP.NET Core, MySQL Server, and at least 8 GB RAM. The software can be deployed on a local office network for multiple authorized users.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section8_chunk0",
+      "priority": "medium"
+    },
+    {
+      "id": "NFR-012",
+      "category": "non_functional",
+      "title": "The Inventory Management System improves operational efficiency supports",
+      "description": "The Inventory Management System improves operational efficiency, supports decision-making, and provides a scalable foundation for future enhancements.",
+      "source_section": "33139d79-b772-425a-9b17-f7f907d0e438:section17_chunk0",
+      "priority": "medium"
+    }
+  ],
+  "constraints": [],
+  "out_of_scope": [],
+  "open_questions": []
+}
