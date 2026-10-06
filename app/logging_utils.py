@@ -1,7 +1,5 @@
 import logging
 from typing import Any
-
-
 class KeywordLoggerAdapter:
     """Small structlog-like adapter for environments without structlog."""
 

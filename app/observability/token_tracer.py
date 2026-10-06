@@ -1,7 +1,4 @@
-"""
-app/observability/token_tracer.py
-Token usage tracing stub.
-"""
+
 
 from __future__ import annotations
 import logging

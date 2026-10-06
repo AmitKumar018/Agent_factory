@@ -356,12 +356,12 @@ class HITLManager:
         return list(self._runs.keys())
 
 
-# ── Process singleton ─────────────────────────────────────────────────────────
+
 
 hitl_manager = HITLManager()
 
 
-# ── Module-level convenience wrappers ─────────────────────────────────────────
+# ── Module-level convenience wrappers 
 # These are the functions called by graph nodes (nodes.py imports these directly
 # rather than importing the hitl_manager instance — keeps node code clean).
 

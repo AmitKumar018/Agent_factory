@@ -6,9 +6,9 @@ import re
 from typing import BinaryIO
 
 
-# ------------------------------------------------------------------ #
+
 # Output format                                                         #
-# ------------------------------------------------------------------ #
+
 
 def make_chunk(
     section_id: str,
@@ -30,9 +30,8 @@ def make_chunk(
     }
 
 
-# ------------------------------------------------------------------ #
-# Text splitting                                                        #
-# ------------------------------------------------------------------ #
+
+# Text splitting                                                        
 
 def split_text_into_chunks(
     text: str,
@@ -76,9 +75,6 @@ def split_text_into_chunks(
     return chunks
 
 
-# ------------------------------------------------------------------ #
-# PDF Parser                                                            #
-# ------------------------------------------------------------------ #
 
 def parse_pdf(file_bytes: bytes) -> list[dict]:
     """
@@ -123,9 +119,7 @@ def parse_pdf(file_bytes: bytes) -> list[dict]:
     return chunks
 
 
-# ------------------------------------------------------------------ #
-# DOCX Parser                                                           #
-# ------------------------------------------------------------------ #
+
 
 def parse_docx(file_bytes: bytes) -> list[dict]:
     """
@@ -201,9 +195,7 @@ def parse_docx(file_bytes: bytes) -> list[dict]:
     return chunks
 
 
-# ------------------------------------------------------------------ #
-# PPTX Parser                                                           #
-# ------------------------------------------------------------------ #
+
 
 def parse_pptx(file_bytes: bytes) -> list[dict]:
     """
@@ -267,9 +259,7 @@ def parse_pptx(file_bytes: bytes) -> list[dict]:
     return chunks
 
 
-# ------------------------------------------------------------------ #
-# XLSX Parser                                                           #
-# ------------------------------------------------------------------ #
+
 
 def parse_xlsx(file_bytes: bytes) -> list[dict]:
     """
@@ -315,9 +305,7 @@ def parse_xlsx(file_bytes: bytes) -> list[dict]:
     return chunks
 
 
-# ------------------------------------------------------------------ #
-# Markdown Parser                                                       #
-# ------------------------------------------------------------------ #
+
 
 def parse_markdown(file_bytes: bytes) -> list[dict]:
     """
@@ -393,9 +381,7 @@ def parse_markdown(file_bytes: bytes) -> list[dict]:
     return chunks
 
 
-# ------------------------------------------------------------------ #
-# TXT Parser                                                            #
-# ------------------------------------------------------------------ #
+
 
 def parse_txt(file_bytes: bytes) -> list[dict]:
     """
@@ -453,9 +439,7 @@ def parse_txt(file_bytes: bytes) -> list[dict]:
     return chunks
 
 
-# ------------------------------------------------------------------ #
-# Main dispatcher                                                       #
-# ------------------------------------------------------------------ #
+
 
 # Maps file extension → parser function
 PARSERS = {

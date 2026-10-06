@@ -16,9 +16,9 @@ from app.logging_utils import get_logger
 log = get_logger(__name__)
 
 
-# ------------------------------------------------------------------ #
-# Upload handling                                                       #
-# ------------------------------------------------------------------ #
+
+# Upload handling                                                       
+
 
 async def handle_upload(
     db: AsyncSession,
@@ -104,9 +104,8 @@ async def get_document_by_hash(
     return result.scalar_one_or_none()
 
 
-# ------------------------------------------------------------------ #
-# Background parse job                                                  #
-# ------------------------------------------------------------------ #
+# Background parse job                                                  
+
 
 async def run_parse_job(document_id: str, project_id: str):
     """

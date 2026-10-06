@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     #  Database paths
     SQLITE_DB_PATH: str = Field("./data/app.sqlite", env="SQLITE_DB_PATH")
 
-    # FIX-1: was checkpoint_db_path (lowercase) — graph.py calls CHECKPOINT_DB_PATH
+    
     CHECKPOINT_DB_PATH: str = Field("./data/checkpoints.sqlite", env="CHECKPOINT_DB_PATH")
 
     
@@ -41,17 +41,15 @@ class Settings(BaseSettings):
     MAX_COST_USD_PER_RUN: float = Field(5.00, env="MAX_COST_USD_PER_RUN")
 
     # Workflow iteration limits
-    # FIX-3: was max_clarification_rounds — nodes.py calls MAX_CLARIFICATION_ROUNDS
+    
     MAX_CLARIFICATION_ROUNDS: int = Field(3, env="MAX_CLARIFICATION_ROUNDS")
 
-    # FIX-4: was max_critic_iterations — standardised to uppercase
+    
     MAX_CRITIC_ITERATIONS: int = Field(3, env="MAX_CRITIC_ITERATIONS")
 
     MAX_REVIEWER_RETRIES: int = Field(3, env="MAX_REVIEWER_RETRIES")
 
-    # FIX-5: MISSING FIELD — nodes.py calls settings.MAX_REFLECTION_ITERATIONS
-    #         but this field did not exist at all — caused AttributeError in
-    #         reflect_and_find_gaps node, silently killing the workflow
+   
     MAX_REFLECTION_ITERATIONS: int = Field(3, env="MAX_REFLECTION_ITERATIONS")
 
     # Default LLM model

@@ -5,9 +5,6 @@ from pydantic import BaseModel
 from app.documents.models import ParseStatus, DocumentKind
 
 
-# ------------------------------------------------------------------ #
-# Upload response                                                       #
-# ------------------------------------------------------------------ #
 
 class DocumentUploadResponse(BaseModel):
     """
@@ -20,9 +17,9 @@ class DocumentUploadResponse(BaseModel):
     message: str   # human-readable hint like "Parse job started"
 
 
-# ------------------------------------------------------------------ #
-# Document status (polling response)                                   #
-# ------------------------------------------------------------------ #
+
+# Document status (polling response)                                   
+
 
 class DocumentStatusResponse(BaseModel):
     """
@@ -46,9 +43,8 @@ class DocumentStatusResponse(BaseModel):
     model_config = {"from_attributes": True}
 
 
-# ------------------------------------------------------------------ #
-# Document list                                                         #
-# ------------------------------------------------------------------ #
+
+# Document list                                                         
 
 class DocumentListResponse(BaseModel):
     """Returned by GET /projects/{id}/documents"""
@@ -56,9 +52,9 @@ class DocumentListResponse(BaseModel):
     total: int
 
 
-# ------------------------------------------------------------------ #
-# Section outline                                                       #
-# ------------------------------------------------------------------ #
+
+# Section outline                                                       
+ 
 
 class SectionItem(BaseModel):
     """One entry in the document's section outline."""
@@ -66,7 +62,7 @@ class SectionItem(BaseModel):
     section_title: str
     chunk_index: int
     page: int
-    text_preview: str    # first 200 characters of the section text
+    text_preview: str   
 
 
 class DocumentSectionsResponse(BaseModel):

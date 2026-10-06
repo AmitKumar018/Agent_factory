@@ -1,10 +1,8 @@
 import os
 from contextlib import asynccontextmanager
-
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-
 from app.auth.router import router as auth_router
 from app.config import get_settings
 from app.documents.router import router as documents_router
@@ -60,14 +58,7 @@ app = FastAPI(
     title="AI Agent Factory",
     description=(
         "Backend-only AI agent factory that turns BRD/PRD/TRD documents into "
-        "requirements, an approved implementation plan, and a generated code bundle.\n\n"
-        "## WebSocket HITL Channel\n"
-        "Endpoint: `WS /projects/{project_id}/runs/{run_id}/hitl?token=<JWT>`\n\n"
-        "Server messages: `clarification_request`, `approval_request`, "
-        "`run_completed`, `error`, and `ping`.\n"
-        "Client messages: `clarification_response`, `approval_response`, and `pong`.\n"
-        "REST equivalents are available for clarifications, approvals, artifact downloads, "
-        "run history, audit, usage, and traceability."
+        
     ),
     version="1.1.0",
     lifespan=lifespan,

@@ -1,34 +1,5 @@
-# #as per milestone-1
-# import structlog
-
-# logger = structlog.get_logger()
 
 
-# async def seed_patterns() -> None:
-#     """
-#     Seed default patterns into the database.
-#     M1 stub — no patterns to seed yet. Added in M3 (Agent Patterns milestone).
-#     """
-#     logger.info(
-#         "pattern_seed_complete",
-#         patterns_added=0,
-#         message="M1 stub — no patterns seeded"
-#     )
-
-
-
-
-
-
-
-
-
-#as per milestone-2
-
-"""
-Idempotent seeder for the 10 canonical agentic design patterns.
-Called once at application startup; safe to call on every restart.
-"""
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.patterns.schemas import PatternCreate
